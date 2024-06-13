@@ -1,4 +1,7 @@
-# Tanghulu
+--데이터: 지방행정인허가데이터개방
+--출처:https://www.localdata.go.kr/main.do
+
+# 엑셀 파일 4개에서 필요한 열을 선별하여 아래로 합치기
 
 SELECT 번호, 인허가일자, 상세영업상태명, 폐업일자
 FROM [dbo].[regular_tang_closed_1]
