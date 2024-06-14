@@ -3,20 +3,20 @@
 
 # 엑셀 파일 4개에서 필요한 열을 선별하여 아래로 합치기
 
-SELECT 번호, 인허가일자, 상세영업상태명, 폐업일자
+SELECT 인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자
 FROM [dbo].[regular_tang_closed_1]
 
 UNION ALL
 
-SELECT 번호, 인허가일자, 상세영업상태명, 폐업일자
+SELECT 인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자
 FROM [dbo].[regular_tang_open_2]
 
 UNION ALL
 
-SELECT 번호, 인허가일자, 상세영업상태명, 폐업일자
+SELECT 인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자
 FROM [dbo].[rest_tang_closed_3]
 
 UNION ALL
 
-SELECT 번호, 인허가일자, 상세영업상태명, 폐업일자
+SELECT 인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자
 FROM [dbo].[rest_tang_open_4]
