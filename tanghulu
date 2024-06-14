@@ -1,22 +1,58 @@
 --데이터: 지방행정인허가데이터개방
 --출처:https://www.localdata.go.kr/main.do
 
-# 엑셀 파일 4개에서 필요한 열을 선별하여 아래로 합치기
+CREATE TABLE 통합테이블 (
+  인허가일자 DATE,
+  영업상태구분코드 INT,
+  상세영업상태명 NVARCHAR(255),
+  폐업일자 DATE
+);
 
+-- regular_tang_closed_1 테이블의 데이터 삽입
+INSERT INTO 통합테이블 (인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자)
 SELECT 인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자
-FROM [dbo].[regular_tang_closed_1]
+FROM [dbo].[regular_tang_closed_1];
 
-UNION ALL
-
+-- regular_tang_open_2 테이블의 데이터 삽입
+INSERT INTO 통합테이블 (인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자)
 SELECT 인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자
-FROM [dbo].[regular_tang_open_2]
+FROM [dbo].[regular_tang_open_2];
 
-UNION ALL
-
+-- rest_tang_closed_3 테이블의 데이터 삽입
+INSERT INTO 통합테이블 (인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자)
 SELECT 인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자
-FROM [dbo].[rest_tang_closed_3]
+FROM [dbo].[rest_tang_closed_3];
 
-UNION ALL
-
+-- rest_tang_open_4 테이블의 데이터 삽입
+INSERT INTO 통합테이블 (인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자)
 SELECT 인허가일자, 영업상태구분코드, 상세영업상태명, 폐업일자
-FROM [dbo].[rest_tang_open_4]
+FROM [dbo].[rest_tang_open_4];
+
+WITH CTE AS (
+  SELECT 
+    인허가일자, 
+    영업상태구분코드, 
+    상세영업상태명, 
+    폐업일자
+  FROM 
+    통합테이블
+
+  UNION ALL
+
+  SELECT 
+    폐업일자 AS 인허가일자, 
+    2 AS 영업상태구분코드, 
+    NULL AS 상세영업상태명, 
+    NULL AS 폐업일자
+  FROM 
+    통합테이블
+  WHERE 
+    폐업일자 IS NOT NULL
+)
+SELECT 
+  인허가일자, 
+  영업상태구분코드, 
+  상세영업상태명, 
+  폐업일자
+FROM 
+  CTE;
