@@ -1,0 +1,31 @@
+--데이터: 영화관 입장권 통합전산망
+--출처: https://www.kobis.or.kr/kobis/business/stat/them/findYearlyTotalList.do
+
+
+-- 새로운 테이블 생성
+CREATE TABLE new_movie_table (
+    연도 int,
+    개봉편수 int,
+    상영편수 int,
+    매출액 bigint,
+    관객수 bigint,
+    점유율 nvarchar(50),
+    구분 nvarchar(50)
+);
+
+-- 데이터 삽입
+-- 한국 데이터 추가 (연도, 개봉편수, 상영편수, 매출액, 관객수, 점유율, 구분='한국')
+INSERT INTO new_movie_table (연도, 개봉편수, 상영편수, 매출액, 관객수, 점유율, 구분)
+SELECT 연도, 개봉편수, 상영편수, 매출액, 관객수, 점유율, '한국'
+FROM [dbo].[theater_covid19];
+
+-- 외국 데이터 추가 (연도, 개봉편수2, 상영편수2, 매출액2, 관객수2, 점유율2, 구분='외국')
+INSERT INTO new_movie_table (연도, 개봉편수, 상영편수, 매출액, 관객수, 점유율, 구분)
+SELECT 연도, 개봉편수2, 상영편수2, 매출액2, 관객수2, 점유율2, '외국'
+FROM [dbo].[theater_covid19];
+
+-- 전체 데이터 추가 (연도, 개봉편수3, 상영편수3, 매출액3, 관객수3, 점유율=NULL, 구분='전체')
+INSERT INTO new_movie_table (연도, 개봉편수, 상영편수, 매출액, 관객수, 점유율, 구분)
+SELECT 연도, 개봉편수3, 상영편수3, 매출액3, 관객수3, NULL, '전체'
+FROM [dbo].[theater_covid19];
+
