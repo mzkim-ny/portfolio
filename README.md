@@ -18,9 +18,9 @@
 
 ## **2. 대시보드**
 
-#### **# 코로나19이후 영화관 매출액 및 관객수 추이(SQL)  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&publish=yes&:sid=&:display_count=n&:origin=viz_share_link)**
+#### **# 코로나19이후 영화관 매출액 및 관객수 추이(SQL)  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)**
 - **데이터**: 영화관 입장권 통합전산망(2024.06)
-- **목적**: 코로나19 이후 영화관 매출액 및 관람객 수가 얼마나 회복되었는지 확인하기 위함
+- **목적**: 코로나19 이후 영화관 매출액 및 관객수가 얼마나 회복되었는지 확인하기 위함
 - **해석**: 
 
 
