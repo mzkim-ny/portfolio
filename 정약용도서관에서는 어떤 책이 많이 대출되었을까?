@@ -1,0 +1,59 @@
+--데이터: 도서관 정보나루
+--출처:https://data4library.kr/
+
+
+-- 1) 십진분류 칼럼 추가
+ALTER TABLE [dbo].[테이블]
+ADD [십진분류] NVARCHAR(50);
+
+
+-- 2) 주제분류번호를 기반으로 십진분류 업데이트
+UPDATE [dbo].[테이블]
+SET [십진분류] = 
+    CASE 
+        WHEN LEFT(주제분류번호, 1) = '0' THEN '총류'
+        WHEN LEFT(주제분류번호, 1) = '1' THEN '철학'
+        WHEN LEFT(주제분류번호, 1) = '2' THEN '종교'
+        WHEN LEFT(주제분류번호, 1) = '3' THEN '사회과학'
+        WHEN LEFT(주제분류번호, 1) = '4' THEN '자연과학'
+        WHEN LEFT(주제분류번호, 1) = '5' THEN '기술과학'
+        WHEN LEFT(주제분류번호, 1) = '6' THEN '예술'
+        WHEN LEFT(주제분류번호, 1) = '7' THEN '언어'
+        WHEN LEFT(주제분류번호, 1) = '8' THEN '문학'
+        WHEN LEFT(주제분류번호, 1) = '9' THEN '역사'
+        ELSE NULL  -- 예외 상황에 대한 처리
+    END;
+
+
+
+-- 3) 합계 산출
+WITH 분류별_합계 AS (
+    SELECT
+        십진분류,
+        SUM(도서권수) AS 총_도서권수,
+        SUM(대출건수) AS 총_대출건수
+    FROM
+         [dbo].[테이블]
+    GROUP BY
+        십진분류
+),
+
+전체_합계 AS (
+    SELECT
+        SUM(총_도서권수) AS 전체_도서권수,
+        SUM(총_대출건수) AS 전체_대출건수
+    FROM
+        분류별_합계
+)
+
+SELECT 
+    십진분류,
+    총_도서권수,
+    총_대출건수,
+    CAST(ROUND((총_도서권수 * 100.0 / (SELECT 전체_도서권수 FROM 전체_합계)), 0) AS INT) AS 총_도서권수_비율,
+    CAST(ROUND((총_대출건수 * 100.0 / (SELECT 전체_대출건수 FROM 전체_합계)), 0) AS INT) AS 총_대출건수_비율
+FROM 
+    분류별_합계
+ORDER BY 
+    총_대출건수_비율 DESC, 총_도서권수_비율 DESC;
+
