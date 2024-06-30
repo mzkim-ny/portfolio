@@ -2,7 +2,9 @@
 안녕하세요. 이곳에서 시각화된 공공데이터를 만나보세요.
 
 - **활용툴**: Excel, MSSQL, Tableau Public, ChatGPT
-- **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈><br><br/>
+- **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈>
+- **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
+
   
 
 ## **1. 대시보드**
