@@ -21,12 +21,12 @@
 
 
 ## **2. 데이터시각화**
-#### **# 남양주시 행정동별 반려견 등록 수(Excel)   - [태블로1](https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1)&nbsp;- [태블로2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
+#### **# 남양주에는 반려견이 얼마나 살까? (Excel)   - [태블로1](https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1)&nbsp;- [태블로2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
 - **데이터**: 남양주시 반려동물 등록현황(개)(2024.02), 남양주시 인구통계(2024.05)
 - **목적**: 남양주 시민의 반려동물(개) 양육현황을 파악하기 위함
 - **해석**: 남양주시 내에서 반려견 등록이 가장 많은 읍면동은 화도읍(10,306마리), 다산1동(6,390마리), 별내동(5,893마리) 순으로 나타나며, 이는 주민등록 인구가 가장 많은 세 읍면동과 유사하다.
 
-#### **# 탕후루매장 개업 및 폐업 수([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%83%95%ED%9B%84%EB%A3%A8%EB%A7%A4%EC%9E%A5%20%EA%B0%9C%EC%97%85%20%EB%B0%8F%20%ED%8F%90%EC%97%85%20%EC%88%98))  - [태블로](https://public.tableau.com/views/2024_06__17185326601780/1_1?:language=ko-KR&publish=yes&:sid=&:display_count=n&:origin=viz_share_link)**
+#### **# 탕후루매장은 여전히 건재할까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%83%95%ED%9B%84%EB%A3%A8%EB%A7%A4%EC%9E%A5%20%EA%B0%9C%EC%97%85%20%EB%B0%8F%20%ED%8F%90%EC%97%85%20%EC%88%98))  - [태블로](https://public.tableau.com/views/2024_06__17185326601780/1_1?:language=ko-KR&publish=yes&:sid=&:display_count=n&:origin=viz_share_link)**
 - **데이터**: 지방행정 인허가 데이터개방(2024.06)
 - **목적**: 대세 간식으로 유행했던 탕후루의 인기가 여전히 유효한지 확인하기 위함
 - **해석**: 2024년 1월부터 6월까지 폐업한 탕후루 매장은 총 163곳으로, 지난해 폐업한 매장(72곳)보다 많다. 탕후루 개업 매장 수는 2023년 3분기에 정점을 찍고, 점점 감소하고 있으며, 최근 감소 추세가 가팔라지고 있다.
