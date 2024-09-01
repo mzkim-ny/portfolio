@@ -8,7 +8,7 @@
   
 
 ## **1. 대시보드**
-#### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4))  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)** ←클릭하시면 링크로 연결됩니다
+#### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4))  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다)
 - **데이터**: 영화관 입장권 통합전산망(2024.06)
 - **목적**: 코로나19 이후 영화산업이 얼마나 회복되었는지 확인하기 위함
 - **해석**: 영화관 매출액 및 관객 수는 2020년 최저치를 기록한 후 점차 증가하고 있다. 2019년 대비, 2023년 매출액은 65%, 관객 수는 55% 회복한 것으로 보인다.
