@@ -14,7 +14,7 @@
 - **한계**: 구매자별 고유값이 없기 때문에, 재구매에 관한 지표는 산출하기 어렵습니다.
 
 ## **2. 대시보드**
-#### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4))  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
+#### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4))  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)** 
 - **데이터**: 영화관 입장권 통합전산망(2024.06)
 - **목적**: 코로나19 이후 영화산업이 얼마나 회복되었는지 확인하기 위함입니다.
 - **코드**: 국가별로 나눠진 세 개의 테이블을 하나의 테이블로 합쳐 필요한 칼럼을 추출하였으며, 칼럼에 값이 없으면 문자를 입력하였습니다.
