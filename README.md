@@ -2,7 +2,7 @@
 안녕하세요. 궁금했던 사안에 관해 질문하고, 데이터를 통해 답한 기록입니다.
 
 - **활용툴**: Excel, MSSQL, Tableau Public, ChatGPT
-- **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈>
+- **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈>, <SQL로 맛보는 데이터 전처리 분석>
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
 ## **1. 지표 분석**
