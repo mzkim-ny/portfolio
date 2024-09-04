@@ -156,3 +156,33 @@ ORDER BY
         ELSE 6
     END,
     rn;
+
+--- 11) 요일별/피크타임별 S사이즈 구매 건수
+
+WITH DayOfWeekCounts AS (
+    SELECT 
+        DATENAME(WEEKDAY, [DATE]) AS day_of_week,
+        DATEPART(WEEKDAY, [DATE]) AS weekday_number,
+        LEFT(time, 2) AS time_two,
+        COUNT(DISTINCT X) AS order_count
+    FROM 
+        [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68]
+    WHERE 
+        size = 'S'
+        AND LEFT(time, 2) IN ('12', '18')
+    GROUP BY 
+        DATENAME(WEEKDAY, [DATE]),
+        DATEPART(WEEKDAY, [DATE]),
+        LEFT(time, 2)
+)
+SELECT 
+    day_of_week,
+    time_two,
+    order_count
+FROM 
+    DayOfWeekCounts
+ORDER BY 
+    weekday_number,
+    time_two;
+
+
