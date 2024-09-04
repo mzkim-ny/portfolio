@@ -1,0 +1,132 @@
+
+SELECT *
+FROM [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68];
+
+
+--- 1) 전체 주문 건수
+
+SELECT COUNT(DISTINCT X) AS X_count
+FROM [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68];
+
+--- 2) 구매 수
+
+SELECT COUNT(DISTINCT id) AS id_count
+FROM [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68];
+
+
+--- 3) 상품별 주문 건수 (내림차순)
+
+SELECT name,
+       COUNT(DISTINCT X) AS name_count
+FROM [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68]
+GROUP BY name
+ORDER BY name_count DESC;
+
+--- 4) 시간별 주문 건수
+
+SELECT 
+    LEFT(time, 2) AS time_hour,
+    COUNT(DISTINCT X) AS order_count
+FROM 
+    [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68]
+GROUP BY 
+    LEFT(time, 2)
+ORDER BY 
+    time_hour;
+
+--- 5) 주문 건당 평균 구매 수
+
+SELECT COUNT(DISTINCT X)/COUNT(DISTINCT id) as NEW
+FROM [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68];
+
+
+--- 6) 사이즈별 주문 건수
+
+SELECT 
+    size,
+    COUNT(DISTINCT X) AS order_count
+FROM [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68]
+GROUP BY 
+    size
+ORDER BY
+    CASE size
+        WHEN 's' THEN 1
+        WHEN 'm' THEN 2
+        WHEN 'l' THEN 3
+        WHEN 'xl' THEN 4
+        WHEN 'xxl' THEN 5
+        ELSE 6
+    END;
+
+--- 7) 시간대별 S사이즈 주문 건수
+
+SELECT 
+    LEFT(time, 2) AS time_hour,
+    COUNT(DISTINCT X) AS order_count
+FROM 
+    [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68]
+WHERE size = 'S' 
+GROUP BY 
+    LEFT(time, 2)
+ORDER BY 
+    time_hour;
+
+--- 8) 피크타임별 구매가 가장 많은 S사이즈 상품 TOP 5 --- 12시 18시
+
+WITH RankedData AS (
+    SELECT 
+        name,
+        LEFT(time, 2) AS time_hour,
+        COUNT(DISTINCT X) AS order_count,
+        ROW_NUMBER() OVER (PARTITION BY LEFT(time, 2) ORDER BY COUNT(DISTINCT X) DESC) AS rn
+    FROM 
+        [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68]
+    WHERE 
+        size = 'S' 
+        AND LEFT(time, 2) IN ('12', '18')
+    GROUP BY 
+        name, LEFT(time, 2)
+)
+SELECT 
+    time_hour,
+	name,
+    order_count
+FROM 
+    RankedData
+WHERE 
+    rn <= 5
+ORDER BY 
+    time_hour, rn;
+
+--- 9) 사이즈별 구매가 많은 상품 TOP 5
+
+WITH RankedProducts AS (
+    SELECT 
+        name,
+        size,
+        COUNT(DISTINCT X) AS order_count,
+        ROW_NUMBER() OVER (PARTITION BY size ORDER BY COUNT(DISTINCT X) DESC) AS rn
+    FROM 
+        [dbo].[A_year_of_pizza_sales_from_a_pizza_place_872_68]
+    GROUP BY 
+        name, size
+)
+SELECT 
+    size,
+    name,
+    order_count
+FROM 
+    RankedProducts
+WHERE 
+    rn <= 5
+ORDER BY 
+    CASE size
+        WHEN 's' THEN 1
+        WHEN 'm' THEN 2
+        WHEN 'l' THEN 3
+        WHEN 'xl' THEN 4
+        WHEN 'xxl' THEN 5
+        ELSE 6
+    END,
+    rn;
+
