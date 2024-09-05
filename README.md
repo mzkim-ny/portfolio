@@ -6,11 +6,11 @@
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
 ## **1. 지표 분석**
-#### **# S사이즈 피자에 할인 쿠폰을 발행한다면? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [태블로](https://public.tableau.com/views/11111111_/1?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
+#### **# S사이즈 피자 할인 쿠폰은 어떻게 발행해야 할까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [태블로](https://public.tableau.com/views/11111111_/1?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
 - **데이터**: Pizza Sales (from Kaggle)
-- **목적**: 1인 피자 시장이 커짐에 따라, S사이즈 피자 판매 현황을 파악하고, 인사이트를 도출하기 위함입니다.
-- **코드**: 전체 주문 건수, 전체 구매자 수(중복 포함), 상품별 주문 건수, 시간별 주문 건수, 주문 건당 평균 구매자 수(중복 포함), 사이즈별 주문 건수, 시간대별 S사이즈 주문 건수, 피크타임별 구매가 가장 많은 S사이즈 상품 5개, 피크타임별 구매가 가장 많은 S사이즈 옵션 5개, 사이즈별 구매가 가장 많은 상품 5개, 요일별/피크타임별 S사이즈 주문 건수를 추출하였습니다.
-- **제언**: S사이즈는 12시와 18시에 구매가 많고, 빅미트, 하와이안, 클래식 DLX, 페퍼로니, 시칠리안 피자가 인기 있으며, 클래식, 슈프림, 베지, 치킨 순으로 판매되었습니다. 사이즈별로 유의미한 차이는 메뉴에서 보입니다. L사이즈는 타이 치킨, 파이브 치즈, 포 치즈, 스파이시 이탈, 사우스웨스트 치킨이 판매량이 많습니다. S사이즈 피자에 쿠폰을 발행한다면, 가장 주문이 많은 목요일 12시, 인기 메뉴에 쿠폰을 적용하는 이벤트를 제안합니다.
+- **목적**: 1인 피자 시장이 커짐에 따라, S사이즈 피자 판매 현황을 파악하고, 할인 쿠폰 발행시 인사이트를 도출하기 위함입니다.
+- **대시보드**: 총 주문금액 등을 지표로 산출하고, 사이즈별 매출비율 등을 진행 그래프로 표현하고, 사이즈/시간/요일에 따른 주문 건수와 주문메뉴를 하이라이트 테이블과 트리맵 차트로 시각화하였습니다.
+- **제언**: ID당 주문이 단 한 건이어도, S사이즈를 먼저 선택하지 않는 것으로 보여집니다. L사이즈 피자 주문 건수와 주문비율이 가장 높습니다. 사이즈별로 선호하는 메뉴가 다른만큼, S사이즈를 가장 많이 주문하는 목요일 12시에, 인기 메뉴 한정 쿠폰을 발행하는 이벤트를 제안합니다.
 
 ## **2. 대시보드**
 #### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4))  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)** 
