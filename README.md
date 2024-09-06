@@ -6,7 +6,7 @@
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
 ## **1. 지표 분석**
-#### **# S사이즈 피자 할인 쿠폰은 어떤 방식으로 발행할 수 있을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [태블로](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
+#### **# 피자 할인 쿠폰은 어떤 식으로 발행할 수 있을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [태블로](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
 - **데이터**: Pizza Sales (from Kaggle)
 - **목적**: 1인 피자 시장이 커짐에 따라, S사이즈 피자 판매 현황을 파악하고, 할인 쿠폰 발행 시 인사이트를 도출하기 위함입니다.
 - **대시보드**: 지표(총 주문금액 등)를 산출하고, 사이즈별 특징을 진행 그래프로 표현하였으며, 사이즈/시간/요일별 주문 건수는 하이라이트 테이블로, 가장 많이 구매한 메뉴 5가지는 트리맵 차트로 시각화하였습니다.
