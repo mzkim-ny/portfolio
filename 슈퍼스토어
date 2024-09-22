@@ -62,7 +62,7 @@ FROM [dbo].[sample_-_superstore]
 GROUP BY FORMAT(Order_Date, 'yyyy')
 ORDER BY YearMonth;
 
----4) 건당 구매 금액(AMV, Average Member Value) (연도별)
+---4) 건당 구매 금액(ATV, Average Transaction Value) (연도별)
 
 SELECT FORMAT(Order_Date, 'yyyy') AS YearMonth, 
 COUNT(DISTINCT Order_ID) N_Order_ID,
