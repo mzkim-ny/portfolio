@@ -6,7 +6,7 @@
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
 ## **1. 지표 분석**
-#### **#슈퍼스토어 매출 및 현황 파악([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))**(←클릭하시면 링크로 연결됩니다.)
+#### ** #슈퍼스토어 매출 및 현황 파악([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))**(←클릭하시면 링크로 연결됩니다.)
 - **데이터**: Superstore Sales
 - **추출지표**:
 1) 매출액(일자별, 월별, 연도별)
@@ -19,7 +19,7 @@
 8) 매출 TOP 10 품목(West, Los Angeles, 2017)
 9) 재구매율 (지역별, 연도별)
 - **코드**: 매출액, 구매자 수, 구매 건수, 인당 매출액은 연도별로 증가하였으나, 건당 구매 금액은 하락하였습니다. 매출액은 지역별로 차이를 보이며, 가장 매출액이 높은 서부지역을 중심으로 도시별, 품목별 판매 추이를 관찰하였습니다. 재구매율은 지역별로는 큰 차이를 보이지 않았고, 연도별로는 상승하였습니다.
-- **시각화**: 고객이 재구매를 하기까지 기간이 얼마나 소요되었는지, 하이라이트 테이블로 표현하였습니다. ([코호트분석])(https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)(←클릭하시면 링크로 연결됩니다.)
+- **시각화**: 고객이 재구매를 하기까지 기간이 얼마나 소요되었는지, 하이라이트 테이블로 표현하였습니다. ([코호트분석](https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))(←클릭하시면 링크로 연결됩니다.)
 - **제언**: 고객이 넓은 간격으로 저렴한 상품을 반복 구매한다고 보여집니다. 이벤트를 진행한다면, 매출이 높은 서부지역에서 상대적으로 가격이 저렴한 인기 품목을 선정하는 것을 제안합니다.
 
 #### **# 피자 할인 쿠폰을 어떤 방식으로 발행할 수 있을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [태블로](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
