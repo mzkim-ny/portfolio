@@ -1,0 +1,206 @@
+USE 슈퍼스토어
+
+SELECT *
+FROM [dbo].[sample_-_superstore]
+
+ALTER TABLE [dbo].[sample_-_superstore]
+ALTER COLUMN sales DECIMAL(10, 2);
+
+ALTER TABLE [dbo].[sample_-_superstore]
+ALTER COLUMN discount DECIMAL(10, 2);
+
+ALTER TABLE [dbo].[sample_-_superstore]
+ALTER COLUMN profit DECIMAL(10, 2);
+
+---1) 매출액(일자별, 월별, 연도별)
+
+SELECT Order_Date, SUM(Sales) AS Total_Sales
+FROM [dbo].[sample_-_superstore]
+GROUP BY Order_Date
+ORDER BY Order_Date;
+
+SELECT FORMAT(Order_Date, 'yyyy-MM') AS YearMonth, SUM(Sales) AS Total_Sales
+FROM [dbo].[sample_-_superstore]
+GROUP BY FORMAT(Order_Date, 'yyyy-MM')
+ORDER BY YearMonth;
+
+SELECT FORMAT(Order_Date, 'yyyy') AS YearMonth, SUM(Sales) AS Total_Sales
+FROM [dbo].[sample_-_superstore]
+GROUP BY FORMAT(Order_Date, 'yyyy')
+ORDER BY YearMonth;
+
+---2) 구매자 수, 구매 건수(일자별, 월별, 연도별)
+
+SELECT Order_Date, 
+COUNT(DISTINCT Customer_ID) N_Customer_ID,
+COUNT(DISTINCT Order_ID) N_Order_ID
+FROM [dbo].[sample_-_superstore]
+GROUP BY Order_Date
+ORDER BY Order_Date;
+
+SELECT FORMAT(Order_Date, 'yyyy-MM') AS YearMonth, 
+COUNT(DISTINCT Customer_ID) N_Customer_ID,
+COUNT(DISTINCT Order_ID) N_Order_ID
+FROM [dbo].[sample_-_superstore]
+GROUP BY FORMAT(Order_Date, 'yyyy-MM')
+ORDER BY YearMonth;
+
+SELECT FORMAT(Order_Date, 'yyyy') AS YearMonth, 
+COUNT(DISTINCT Customer_ID) N_Customer_ID,
+COUNT(DISTINCT Order_ID) N_Order_ID
+FROM [dbo].[sample_-_superstore]
+GROUP BY FORMAT(Order_Date, 'yyyy')
+ORDER BY YearMonth;
+
+---3) 인당 매출액(AMV, Average Member Value) (연도별)
+
+SELECT FORMAT(Order_Date, 'yyyy') AS YearMonth, 
+COUNT(DISTINCT Customer_ID) N_Customer_ID,
+SUM(Sales) AS Total_Sales,
+SUM(Sales)/COUNT(DISTINCT Customer_ID) AS AMV 
+FROM [dbo].[sample_-_superstore]
+GROUP BY FORMAT(Order_Date, 'yyyy')
+ORDER BY YearMonth;
+
+---4) 건당 구매 금액(AMV, Average Member Value) (연도별)
+
+SELECT FORMAT(Order_Date, 'yyyy') AS YearMonth, 
+COUNT(DISTINCT Order_ID) N_Order_ID,
+SUM(Sales) AS Total_Sales,
+SUM(Sales)/COUNT(DISTINCT Order_ID) AS ATV
+FROM [dbo].[sample_-_superstore]
+GROUP BY FORMAT(Order_Date, 'yyyy')
+ORDER BY YearMonth;
+
+--- 5) 국가별, 도시별 매출액
+
+SELECT Country, City,
+SUM(Sales) AS Total_Sales
+FROM [dbo].[sample_-_superstore]
+GROUP BY Country, City
+ORDER BY 1,2;
+
+--- 6) 지역별 매출액 비교
+
+SELECT Region,
+SUM(Sales) AS Total_Sales
+FROM [dbo].[sample_-_superstore]
+GROUP BY Region
+ORDER BY 2 DESC;
+
+--- 7) West top 5 도시 및 매출 
+
+WITH RankedSales AS (
+    SELECT
+        City,
+        SUM(Sales) AS Total_Sales,
+        DENSE_RANK() OVER (ORDER BY SUM(Sales) DESC) AS RNK
+    FROM [dbo].[sample_-_superstore]
+	WHERE region = 'west'
+    GROUP BY City
+)
+SELECT
+    City,
+    Total_Sales,
+    RNK
+FROM RankedSales
+WHERE RNK BETWEEN 1 AND 5
+ORDER BY RNK;
+
+
+SELECT
+    City,
+    Total_Sales,
+    RNK
+FROM (
+    SELECT
+        City,
+        SUM(Sales) AS Total_Sales,
+        DENSE_RANK() OVER (ORDER BY SUM(Sales) DESC) AS RNK
+    FROM [dbo].[sample_-_superstore]
+	WHERE region = 'west'
+    GROUP BY City
+) AS RankedSales
+WHERE RNK BETWEEN 1 AND 5
+ORDER BY RNK;
+
+--- Dense_Rank는 GROUP BY에서 사용할 수 없음.
+--- Where절은 From에 위치한 테이블에서만 조건을 걸 수 있음.
+--- RNK는 SELECT에서 생성한 칼럼이라 조건절(WHERE)에서 사용할 수 없음.
+
+
+--- 9) Best Seller 10 (West, Los Angeles, 2017)
+
+SELECT
+	Category,
+	Sub_Category,
+	Product_Name,
+    Total_Sales,
+    RNK
+FROM (
+    SELECT
+		Category,
+		Sub_Category,
+		Product_Name,
+        SUM(Sales) AS Total_Sales,
+        DENSE_RANK() OVER (ORDER BY SUM(Sales) DESC) AS RNK
+    FROM [dbo].[sample_-_superstore]
+	WHERE Region = 'West' and Year(Order_Date)=2017 and City = 'Los Angeles'
+    GROUP BY Category, Sub_Category, Product_Name
+) AS RankedSales
+WHERE RNK BETWEEN 1 AND 10
+ORDER BY RNK;
+
+--- 10) 리텐션 (지역별, 연도별)
+
+SELECT 
+    C.Region,
+    YEAR(A.Order_Date) AS Year_,
+    COUNT(DISTINCT A.Customer_ID) AS BU_1,
+    COUNT(DISTINCT B.Customer_ID) AS BU_2,
+    COUNT(DISTINCT B.Customer_ID) * 1.0 / COUNT(DISTINCT A.Customer_ID) AS Retention_Rate
+FROM 
+    [dbo].[sample_-_superstore] A
+LEFT JOIN 
+    [dbo].[sample_-_superstore] B ON A.Customer_ID = B.Customer_ID 
+                                    AND YEAR(A.Order_Date) = YEAR(B.Order_Date) - 1
+LEFT JOIN 
+    [dbo].[sample_-_superstore] C ON A.Customer_ID = C.Customer_ID
+GROUP BY 
+    C.Region, YEAR(A.Order_Date);
+
+--- (연도별)
+
+SELECT 
+    YEAR(A.Order_Date) AS Year_,
+    COUNT(DISTINCT A.Customer_ID) AS BU_1,
+    COUNT(DISTINCT B.Customer_ID) AS BU_2,
+    COUNT(DISTINCT B.Customer_ID) * 1.0 / COUNT(DISTINCT A.Customer_ID) AS Retention_Rate
+FROM 
+    [dbo].[sample_-_superstore] A
+LEFT JOIN 
+    [dbo].[sample_-_superstore] B ON A.Customer_ID = B.Customer_ID 
+                                    AND YEAR(A.Order_Date) = YEAR(B.Order_Date) - 1
+LEFT JOIN 
+    [dbo].[sample_-_superstore] C ON A.Customer_ID = C.Customer_ID
+GROUP BY 
+    YEAR(A.Order_Date)
+ORDER BY 
+	YEAR(A.Order_Date);
+
+--- (지역별)
+
+SELECT 
+    C.Region,
+    COUNT(DISTINCT A.Customer_ID) AS BU_1,
+    COUNT(DISTINCT B.Customer_ID) AS BU_2,
+    COUNT(DISTINCT B.Customer_ID) * 1.0 / COUNT(DISTINCT A.Customer_ID) AS Retention_Rate
+FROM 
+    [dbo].[sample_-_superstore] A
+LEFT JOIN 
+    [dbo].[sample_-_superstore] B ON A.Customer_ID = B.Customer_ID 
+                                    AND YEAR(A.Order_Date) = YEAR(B.Order_Date) - 1
+LEFT JOIN 
+    [dbo].[sample_-_superstore] C ON A.Customer_ID = C.Customer_ID
+GROUP BY 
+    C.Region;
