@@ -88,7 +88,7 @@ FROM [dbo].[sample_-_superstore]
 GROUP BY Region
 ORDER BY 2 DESC;
 
---- 7) West top 5 도시 및 매출 
+--- 7) TOP 5 도시 (West) 
 
 WITH RankedSales AS (
     SELECT
@@ -129,7 +129,7 @@ ORDER BY RNK;
 --- RNK는 SELECT에서 생성한 칼럼이라 조건절(WHERE)에서 사용할 수 없음.
 
 
---- 9) Best Seller 10 (West, Los Angeles, 2017)
+--- 8) Best Seller 10 (West, Los Angeles, 2017)
 
 SELECT
 	Category,
@@ -151,7 +151,7 @@ FROM (
 WHERE RNK BETWEEN 1 AND 10
 ORDER BY RNK;
 
---- 10) 리텐션 (지역별, 연도별)
+--- 9) 재구매율 (지역별, 연도별)
 
 SELECT 
     C.Region,
