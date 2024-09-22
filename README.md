@@ -6,7 +6,7 @@
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
 ## **1. 지표 분석**
----
+<hr style="border: 1px solid #ccc;">
 #### **# 슈퍼스토어 매출 및 현황 파악 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))**(←클릭하시면 링크로 연결됩니다.)
 - **데이터**: Superstore Sales
 - **추출지표**:<br>
