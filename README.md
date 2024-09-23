@@ -7,7 +7,7 @@
 
 ## **1. 지표 분석**
 #### **# 슈퍼스토어 매출 및 현황 파악 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))**(←클릭하시면 링크로 연결됩니다.)
-- **데이터**: Superstore Sales
+- **데이터**: Superstore Sales (from Tableau)
 - **추출지표**:<br>
 1\) 매출액(일자별, 월별, 연도별)<br>
 2\) 구매자 수, 구매 건수(일자별, 월별, 연도별)<br>
