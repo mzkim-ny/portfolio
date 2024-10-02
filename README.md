@@ -1,4 +1,4 @@
-# **Min-zi Kim's portfolio**
+# **Min-zi Kim's Portfolio**
 Hello, this is a record of asking questions about issues I was curious about and answering through data.
 
 - **Tools**: Excel, MSSQL, Tableau Public, ChatGPT
