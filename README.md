@@ -1,5 +1,5 @@
 # **Minji Kim's portfolio**
-Hello, this is a record of asking questions about issues you were curious about and answering through data.
+Hello, this is a record of asking questions about issues I was curious about and answering through data.
 
 - **Tools**: Excel, MSSQL, Tableau Public, ChatGPT
 - **References**: <My first SQL class>, <Tableau Good Morning Afternoon>, <Data Pre-processing Analysis Tasting in SQL>
