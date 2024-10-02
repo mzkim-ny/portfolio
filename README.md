@@ -47,7 +47,7 @@ Hello, this is a record of asking questions about issues I was curious about and
 
 
 ## **3. Visualize data**
-#### **# How many dogs will live in Namyangju? (Excel) - [Tableau 1] (https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1) - [Tableau 2] (https://public.tableau.com/shared/35Z4SXZ2H ?:display_count=n&:origin=viz_share_link)**
+#### **# How many dogs will live in Namyangju? (Excel) - [Tableau 1](https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1)&nbsp;- [Tableau 2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
 - **Data**: Namyangju's pet registration status (dog) (2024.02) and Namyangju's demographic (2024.05)
 - **Purpose**: To understand the current status of Namyangju citizens raising their pets (dogs).
 - **Interpretation**: The townships with the highest number of dog registrations in Namyangju are Hwado-eup (10,306), Dasan 1-dong (6,390), and Byeolnae-dong (5,893), similar to the three townships with the highest resident registration population.
