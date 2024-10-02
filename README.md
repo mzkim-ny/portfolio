@@ -2,7 +2,7 @@
 Hello, this is a record of asking questions about issues I was curious about and answering through data.
 
 - **Tools**: Excel, MSSQL, Tableau Public, ChatGPT
-- **References**: <My first SQL class>, <Tableau Good Morning Afternoon>, <Data Pre-processing Analysis Tasting in SQL>
+- **References**: 'My first SQL class', 'Tableau Good Morning Afternoon', 'Data Pre-processing Analysis Tasting in SQL' 
 - **Tableau**: [profile](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
 ## **1. Indicator Analysis**
