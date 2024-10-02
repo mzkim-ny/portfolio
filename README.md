@@ -21,7 +21,7 @@ Hello, this is a record of asking questions about issues I was curious about and
 - **Visualization**: How long it took for the customer to repurchase, expressed in a highlight table. ([Cohort Analysis] (https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))
 - **Advice**: It appears that customers are increasingly buying more and more affordable products over and over again at wider intervals. If we proceed with the event, we suggest selecting popular items that are relatively affordable in the West, where sales are high.
 
-#### **# How can I issue pizza discount coupons? ([SQL] (https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [Tableau] (https://public.tableau.com/shared/4FKB8ZMXH ?:display_count=n&:original=viz_share_link)** (←Click to link.)
+#### **# How can I issue pizza discount coupons? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [Tableau](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link)** (←Click to link.)
 - **Data**: Pizza Sales (from Kaggle)
 - **Purpose**: As the single-person pizza market grows, it is to understand the current status of S-sized pizza sales and refer to them when issuing discount coupons.
 - **Dashboard**: Indicators (total order amount, etc.) were calculated, features by size were expressed as progress graphs, the number of orders by size/hour/day was visualized as a highlight table, and the five most purchased menus were visualized as a tree map chart.
