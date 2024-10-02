@@ -6,7 +6,7 @@ Hello, this is a record of asking questions about issues I was curious about and
 - **Tableau**: [profile](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
 ## **1. Indicator Analysis**
-#### **# Understand superstore sales and status ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** (←Click to link)
+#### **# Understanding superstore sales performance ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** (←Click to link)
 - **Data**: Superstore Sales (from Tableau)
 - **Extract indicator**:<br>
 1\) Sales (by date, month, year) <br>
