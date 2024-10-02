@@ -1,60 +1,60 @@
-# **김민지 포트폴리오**
-안녕하세요. 궁금했던 사안에 관해 질문하고, 데이터를 통해 답한 기록입니다.
+# **Minji Kim's portfolio**
+Hello, this is a record of asking questions about issues you were curious about and answering through data.
 
-- **활용툴**: Excel, MSSQL, Tableau Public, ChatGPT
-- **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈>, <SQL로 맛보는 데이터 전처리 분석>
-- **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
+- **Tools**: Excel, MSSQL, Tableau Public, ChatGPT
+- **References**: <My first SQL class>, <Tableau Good Morning Afternoon>, <Data Pre-processing Analysis Tasting in SQL>
+- **Tableau**: [profile](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
-## **1. 지표 분석**
-#### **# 슈퍼스토어 매출 및 현황 파악 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** (←클릭하시면 링크로 연결됩니다.)
-- **데이터**: Superstore Sales (from Tableau)
-- **추출지표**:<br>
-1\) 매출액(일자별, 월별, 연도별)<br>
-2\) 구매자 수, 구매 건수(일자별, 월별, 연도별)<br>
-3\) 인당 매출액(AMV, Average Member Value) (연도별)<br>
-4\) 건당 구매 금액(ATV, Average Transaction Value) (연도별)<br>
-5\) 매출액(국가별, 도시별, 지역별)<br>
-6\) 매출 TOP 5 도시(West)<br>
-7\) 매출 TOP 10 품목(West, Los Angeles, 2017)<br>
-8\) 재구매율(지역별, 연도별)<br>
-- **해석**: 매출액, 구매자 수, 구매 건수, 인당 매출액은 연도별로 증가하였으나, 건당 구매 금액은 하락하였습니다. 가장 매출액이 높은 서부지역을 중심으로 도시별, 품목별 판매순위를 추출하였습니다. 재구매율은 지역별로는 차이를 보이지 않고, 연도별로는 상승하였습니다.
-- **시각화**: 고객이 재구매를 하기까지 기간이 얼마나 소요되었는지, 하이라이트 테이블로 표현하였습니다. ([코호트분석](https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)) 
-- **제언**: 고객이 점점 넓은 간격으로 보다 저렴한 상품을 반복 구매한다고 보여집니다. 이벤트를 진행한다면, 매출이 높은 서부지역에서 상대적으로 가격이 저렴한 인기 품목을 선정하는 것을 제안합니다.
+## **1. Indicator Analysis**
+#### **# Understand superstore sales and status ([SQL] (https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** (←Click to link)
+- **Data**: Superstore Sales (from Tableau)
+- **Extract indicator**:<br>
+1\) Sales (by date, month, year) <br>
+2\) Number of buyers, number of purchases (by date, month, year)<br>
+3\) Revenue per person (AMV, Average Member Value) (annual) <br>
+4\) Purchase amount per case (ATV, Average Transaction Value) (year by year)<br>
+5\) Revenue (by country, city, and region) <br>
+6\) Sales Top 5 Cities (West)<br>
+7\) Top 10 Sales Items (West, Los Angeles, 2017)<br>
+8\) Repurchase rate (by region, by year) <br>
+- **Interpretation**: Sales, number of buyers, number of purchases, and sales per person increased annually, but purchases per case fell. We extracted sales rankings by city and item, focusing on the western regions with the highest sales. Repurchase rates did not vary by region, but increased annually.
+- **Visualization**: How long it took for the customer to repurchase, expressed in a highlight table. ([Cohort Analysis] (https://public.tableau.com/views/240922_/2 ?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))
+- **Advice**: It appears that customers are increasingly buying more and more affordable products over and over again at wider intervals. If we proceed with the event, we suggest selecting popular items that are relatively affordable in the West, where sales are high.
 
-#### **# 피자 할인 쿠폰을 어떤 방식으로 발행할 수 있을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [태블로](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
-- **데이터**: Pizza Sales (from Kaggle)
-- **목적**: 1인 피자 시장이 커짐에 따라, S사이즈 피자 판매 현황을 파악하고, 할인 쿠폰 발행 시 참고하기 위함입니다.
-- **대시보드**: 지표(총 주문금액 등)를 산출하고, 사이즈별 특징을 진행 그래프로 표현하였으며, 사이즈/시간/요일별 주문 건수는 하이라이트 테이블로, 가장 많이 구매한 메뉴 5가지는 트리맵 차트로 시각화하였습니다.
-- **제언**: ID당 주문이 단 한 건이어도, S사이즈를 먼저 선택하지 않는 것으로 보입니다. 주문비율과 매출비율 모두 L사이즈가 가장 높고, 다음으로는 M사이즈, S사이즈입니다. 사이즈별로 선호하는 메뉴가 다른 만큼, S사이즈를 가장 많이 주문하는 목요일 12시에, 인기 메뉴에 한정하여 할인 쿠폰을 발행하는 이벤트를 제안합니다.
-- **코드**: 태블로에서 작업을 시작하기 전, SQL로 지표를 도출해보면서, 사이즈별로 선호하는 메뉴가 다른 점, 시간대가 달라도 같은 사이즈면 선호하는 메뉴가 그리 다르지 않다는 점을 발견하고, 이에 맞춰 대시보드를 구성하였습니다.
+#### **# How can I issue pizza discount coupons? ([SQL] (https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [Tableau] (https://public.tableau.com/shared/4FKB8ZMXH ?:display_count=n&:original=viz_share_link)** (←Click to link.)
+- **Data**: Pizza Sales (from Kaggle)
+- **Purpose**: As the single-person pizza market grows, it is to understand the current status of S-sized pizza sales and refer to them when issuing discount coupons.
+- **Dashboard**: Indicators (total order amount, etc.) were calculated, features by size were expressed as progress graphs, the number of orders by size/hour/day was visualized as a highlight table, and the five most purchased menus were visualized as a tree map chart.
+- **Advice**: Even if there is only one order per ID, it seems that S size is not selected first. L size is the highest in both order and sales ratio, followed by M size and S size. As the menu you prefer differs by size, we suggest an event to issue discount coupons only for popular menus at 12 o'clock on Thursday when you order the most S size.
+- **Code**: Before I started working on the table, I found that the preferred menu was different for each size and the same size even though the time zone was different, so I organized the dashboard accordingly.
 
-## **2. 대시보드**
-#### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4))  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)** 
-- **데이터**: 영화관 입장권 통합전산망(2024.06)
-- **목적**: 코로나19 이후 영화산업이 얼마나 회복되었는지 확인하기 위함입니다.
-- **코드**: 국가별로 나눠진 세 개의 테이블을 하나의 테이블로 합쳐 필요한 칼럼을 추출하였으며, 칼럼에 값이 없으면 문자를 입력하였습니다.
-- **대시보드**: 국가별 추이(전체영화, 한국영화, 외국영화)가 어떠한 변화를 보이는지, 년도, 매출액, 관객 수, 영화 수를 조건으로 두고, 누적 그래프와 숫자로 표현하였습니다.
-- **제언**: 2019년과 2023년을 비교했을 때, 매출액보다 관객 수 회복 비율이 낮습니다. 매출액이 상승한 이유가 영화 티켓값 인상 때문인지 혹은 특정 굿즈 구매 증가 때문인지 분석이 필요해 보입니다.
-- **한계**: 공공데이터로는 개인식별정보에 접근할 수 없는 어려움이 있습니다.
-
-
-#### **# 정약용도서관에서는 어떤 책이 많이 대출되었을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%95%EC%95%BD%EC%9A%A9%EB%8F%84%EC%84%9C%EA%B4%80%EC%97%90%EC%84%9C%EB%8A%94%20%EC%96%B4%EB%96%A4%20%EC%B1%85%EC%9D%B4%20%EB%A7%8E%EC%9D%B4%20%EB%8C%80%EC%B6%9C%EB%90%98%EC%97%88%EC%9D%84%EA%B9%8C%3F))  - [태블로](https://public.tableau.com/views/_17196652852140/1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)**
-- **데이터**: 남양주시 정약용도서관 장서 대출목록(2024.05)
-- **목적**: 정약용도서관 이용자의 독서 취향을 파악하기 위함입니다.
-- **코드**: 십진분류 칼럼을 주제분류번호를 기반으로 업데이트 하였고, 가상테이블을 만들어 특정 칼럼을 추출하고, 함수를 사용하여 필요한 숫자를 산출하였습니다.
-- **대시보드**: 도서 대출 비율에 따라 십진분류 카테고리를 원그래프로 시각화하였습니다. 각 원을 클릭하면, 대출목록 TOP 10, 대출 횟수, 총 대출 건수, 총 보유 권수가 표시됩니다.
-- **제언**: 가장 많이 대출하는 문학과 사회과학을 자료실 입구에 나란히 배치한 것은, 총 대출 건수를 늘리는 선택이었다고 생각합니다. 이벤트 서가 코너에 새로운 책을 비치할 때, 보유 권수는 많지만 대출 건수가 저조한 카테고리의 책을 고려해볼 수 있겠습니다.
+## **2. Dashboard**
+#### **# How many moviegoers have returned to cinemas after COVID-19? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4)) - [Tableau](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)**
+- **Data**: Movie theater ticket integrated computer network (2024.06)
+- **Purpose**: To see how much the film industry has recovered since COVID-19.
+- **Code**: Three tables divided by countries were combined into one table to extract the required column, and if there was no value in the column, text was entered.
+- **Dashboard**: It is expressed in cumulative graphs and numbers based on the changes in trends by country (all films, Korean films, foreign films), year, sales, number of audiences, and number of films.
+- **Advice**: Compared to 2019 and 2023, the audience recovery rate is lower than sales. It seems necessary to analyze whether the increase in sales is due to higher movie ticket prices or higher purchases of certain goods.
+- **Limit**: It is difficult to access personal identification information with public data.
 
 
-## **3. 데이터 시각화**
-#### **# 남양주에는 반려견이 얼마나 살까? (Excel)   - [태블로1](https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1)&nbsp;- [태블로2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
-- **데이터**: 남양주시 반려동물 등록현황(개)(2024.02), 남양주시 인구통계(2024.05)
-- **목적**: 남양주 시민의 반려동물(개) 양육 현황을 파악하기 위함입니다.
-- **해석**: 남양주시 내에서 반려견 등록이 가장 많은 읍면동은 화도읍(10,306마리), 다산1동(6,390마리), 별내동(5,893마리) 순으로 나타나며, 이는 주민등록 인구가 가장 많은 세 읍면동과 유사하다.
-- **제언**: 구리시는 반려동물 놀이터를 설치하여 만족도를 실험해보고 있습니다. 남양주시도 시범 운영을 해본다면, 면적 수 대비 반려견 등록 수가 가장 많은, 다산 1동에서 먼저 시작해보는 걸 추천합니다. 반려동물 놀이터 하나당 이용률을 높일 수 있고 여러 의견을 청취해볼 수 있습니다.
+#### **# What books have been most borrowed from the Jeong Yak-yong Library? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%95%EC%95%BD%EC%9A%A9%EB%8F%84%EC%84%9C%EA%B4%80%EC%97%90%EC%84%9C%EB%8A%94%20%EC%96%B4%EB%96%A4%20%EC%B1%85%EC%9D%B4%20%EB%A7%8E%EC%9D%B4%20%EB%8C%80%EC%B6%9C%EB%90%98%EC%97%88%EC%9D%84%EA%B9%8C%3F)) - [Tableau](https://public.tableau.com/views/_17196652852140/1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)**
+- **Data**: Namyangju City Jeong Yakyong Library Book Lending List (2024.05)
+- **Purpose**: This is to understand the reading preferences of users of Jeong Yakyong Library.
+- **Code**: We updated the decimal classification column based on the subject classification number, created a virtual table, extracted specific columns, and used functions to calculate the required numbers.
+- **Dashboard**: A one-graph visualization of decimal classification categories according to the book loan ratio. When each circle is clicked, the list of loans top 10, the number of loans, the total number of loans, and the total number of holdings will be displayed.
+- **Advice**: Placing the most borrowed literature and social sciences side-by-side at the entrance to the archives was a choice to increase the total number of loans. When the event book puts a new book in the corner, you may want to consider a category with a large number of books in possession but a low number of loans.
 
-#### **# 지금 탕후루매장 인기는 어떠할까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%83%95%ED%9B%84%EB%A3%A8%EB%A7%A4%EC%9E%A5%20%EA%B0%9C%EC%97%85%20%EB%B0%8F%20%ED%8F%90%EC%97%85%20%EC%88%98))  - [태블로](https://public.tableau.com/views/2024_06_1/1_1?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
-- **데이터**: 지방행정 인허가 데이터개방(2024.06)
-- **목적**: 대세 간식으로 유행했던 탕후루의 인기가 여전히 유효한지 확인하기 위함입니다.
-- **해석**: 2024년 1월부터 6월까지 폐업한 탕후루 매장은 총 163곳으로, 지난해 폐업한 매장(72곳)보다 많다. 탕후루 개업 매장 수는 2023년 3분기에 정점을 찍고, 점점 감소하고 있으며, 최근 감소 추세가 가팔라지고 있다.
-- **제언**: 탕후루매장의 개점 및 폐점 속도가 유독 빨랐던 것인지, 일정한 주기가 있는 것인지 다른 업종 데이터와 대조해 보면, 보다 면밀한 분석이 가능할 것입니다.
+
+## **3. Visualize data**
+#### **# How many dogs will live in Namyangju? (Excel) - [Tableau 1] (https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1) - [Tableau 2] (https://public.tableau.com/shared/35Z4SXZ2H ?:display_count=n&:origin=viz_share_link)**
+- **Data**: Namyangju's pet registration status (dog) (2024.02) and Namyangju's demographic (2024.05)
+- **Purpose**: To understand the current status of Namyangju citizens raising their pets (dogs).
+- **Interpretation**: The townships with the highest number of dog registrations in Namyangju are Hwado-eup (10,306), Dasan 1-dong (6,390), and Byeolnae-dong (5,893), similar to the three townships with the highest resident registration population.
+- **Advice**: Guri City has set up a pet playground to test the level of satisfaction. If Namyangju City is also going to test it out, I recommend you start at Dasan 1-dong, which has the highest number of dog registrations for the number of areas. You can increase the utilization rate per pet playground and listen to different opinions.
+
+#### **# How popular are tanghulu shops right now? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%83%95%ED%9B%84%EB%A3%A8%EB%A7%A4%EC%9E%A5%20%EA%B0%9C%EC%97%85%20%EB%B0%8F%20%ED%8F%90%EC%97%85%20%EC%88%98)) - [Tableau](https://public.tableau.com/views/2024_06_1/1_1?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
+- **Data**: Local administration licensing data open (2024.06)
+- **Purpose**: To ensure Tanghulu's popularity, which was popular as a popular snack, remains valid.
+- ** Interpretation**: A total of 163 Tanghulu stores closed between January and June 2024, more than 72 stores closed last year. The number of Tanghulu stores peaked in Q3 2023, has been declining, and the recent decline has been sharpening.
+- **Advice**: A closer analysis should be possible when compared to other industry data on whether Tanghulu stores opened and closed at a particularly fast pace or whether there is a regular cycle.
