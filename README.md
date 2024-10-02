@@ -1,5 +1,5 @@
 # **Min-zi Kim's Portfolio**
-Hello, this is a record of asking questions about issues I was curious about and answering through data.
+Hello. This is a record of questions I had about issues I was curious about, along with answers based on data.
 
 - **Tools**: Excel, MSSQL, Tableau Public, ChatGPT
 - **References**: 'My first SQL class', 'Tableau Good Morning Afternoon', 'Data Pre-processing Analysis Tasting in SQL' 
