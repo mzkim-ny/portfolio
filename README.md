@@ -21,7 +21,7 @@
 - **시각화**: 고객이 재구매를 하기까지 기간이 얼마나 소요되었는지, 하이라이트 테이블로 표현하였습니다. ([코호트분석](https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)) 
 - **제언**: 고객이 점점 넓은 간격으로 보다 저렴한 상품을 반복 구매한다고 보여집니다. 이벤트를 진행한다면, 매출이 높은 서부지역에서 상대적으로 가격이 저렴한 인기 품목을 선정하는 것을 제안합니다.
 
-#### **# 피자 할인 쿠폰을 어떤 방식으로 발행할 수 있을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [Tableau](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
+#### **# 피자 할인 쿠폰을 어떤 방식으로 발행할 수 있을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [태블로로](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
 - **데이터**: Pizza Sales (from Kaggle)
 - **목적**: 1인 피자 시장이 커짐에 따라, S사이즈 피자 판매 현황을 파악하고, 할인 쿠폰 발행 시 참고하기 위함입니다.
 - **대시보드**: 지표(총 주문금액 등)를 산출하고, 사이즈별 특징을 진행 그래프로 표현하였으며, 사이즈/시간/요일별 주문 건수는 하이라이트 테이블로, 가장 많이 구매한 메뉴 5가지는 트리맵 차트로 시각화하였습니다.
@@ -41,13 +41,7 @@
 #### **# 정약용도서관에서는 어떤 책이 많이 대출되었을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%95%EC%95%BD%EC%9A%A9%EB%8F%84%EC%84%9C%EA%B4%80%EC%97%90%EC%84%9C%EB%8A%94%20%EC%96%B4%EB%96%A4%20%EC%B1%85%EC%9D%B4%20%EB%A7%8E%EC%9D%B4%20%EB%8C%80%EC%B6%9C%EB%90%98%EC%97%88%EC%9D%84%EA%B9%8C%3F))  - [태블로](https://public.tableau.com/views/_17196652852140/1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)**
 - **데이터**: 남양주시 정약용도서관 장서 대출목록(2024.05)
 - **목적**: 정약용도서관 이용자의 독서 취향을 파악하기 위함입니다.
-- **코드**: 십진분류 칼럼을 주제분류번호를 기반으로 업데이트 하였고, 가상테이블을 만들어 특정 칼럼을 추출하고, 함수를 사용하여 필요한 숫자를 산출하였습니다.
-- **대시보드**: 도서 대출 비율에 따라 십진분류 카테고리를 원그래프로 시각화하였습니다. 각 원을 클릭하면, 대출목록 TOP 10, 대출 횟수, 총 대출 건수, 총 보유 권수가 표시됩니다.
-- **제언**: 가장 많이 대출하는 문학과 사회과학을 자료실 입구에 나란히 배치한 것은, 총 대출 건수를 늘리는 선택이었다고 생각합니다. 이벤트 서가 코너에 새로운 책을 비치할 때, 보유 권수는 많지만 대출 건수가 저조한 카테고리의 책을 고려해볼 수 있겠습니다.
-
-
-## **3. 데이터 시각화**
-#### **# 남양주에는 반려견이 얼마나 살까? (Excel)   - [Tableau 1](https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1)&nbsp;- [Tableau 2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
+- **코드**: 십진분류 칼럼을 주제분류번호를 기반로 2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
 - **데이터**: 남양주시 반려동물 등록현황(개)(2024.02), 남양주시 인구통계(2024.05)
 - **목적**: 남양주 시민의 반려동물(개) 양육 현황을 파악하기 위함입니다.
 - **해석**: 남양주시 내에서 반려견 등록이 가장 많은 읍면동은 화도읍(10,306마리), 다산1동(6,390마리), 별내동(5,893마리) 순으로 나타나며, 이는 주민등록 인구가 가장 많은 세 읍면동과 유사하다.
