@@ -16,12 +16,12 @@
 6\) 고객 세그먼트(RFM Score, K Means Algorithm) <br>
 7\) 일자별 첫 구매자 수<br>
 8\) 상품별 첫 구매 고객 수<br>
-9\) 첫 구매 후 이탈하는 고객의 비중
-10\) 판매 수량이 20% 이상 증가한 상품 리스트 (YTD)
-11\) 주차별 매출액
-12\) 신규/기존 고객의 2024년 월별 매출액 
-13\) 기존 고객의 2024년 월 누적 리텐션-[태블로](https://public.tableau.com/app/profile/mzkim/viz/2024_17288177678440/1)
-14\) LTV(Life Time Value)
+9\) 첫 구매 후 이탈하는 고객의 비중<br>
+10\) 판매 수량이 20% 이상 증가한 상품 리스트 (YTD)<br>
+11\) 주차별 매출액<br>
+12\) 신규/기존 고객의 2024년 월별 매출액 <br>
+13\) 기존 고객의 2024년 월 누적 리텐션-[태블로](https://public.tableau.com/app/profile/mzkim/viz/2024_17288177678440/1)<br>
+14\) LTV(Life Time Value)<br>
 
 ## **1. 지표 분석**
 #### **# 슈퍼스토어 매출 및 현황 파악 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** (←클릭하시면 링크로 연결됩니다.)
