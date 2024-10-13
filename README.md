@@ -5,6 +5,24 @@
 - **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈>, <SQL로 맛보는 데이터 전처리 분석>
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
+## **0. 전자 제품 데이터를 이용한 리포트 작성** ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%84%EC%9E%90%20%EC%A0%9C%ED%92%88%20%ED%8C%90%EB%A7%A4%20%EB%8D%B0%EC%9D%B4%ED%84%B0))** (←클릭하시면 링크로 연결됩니다.)
+- **데이터**: Customer purchase behavior - Electronic Sales Data (from Tableau)
+- **추출지표**:<br>
+1\) 상품별 구매자 수 및 매출액<br>
+2\) 가장 많이 판매된 2개 카테고리 조회 (판매 상품 수 기준)<br>
+3\) 2)번 구매자가 구매한 다른 카테고리 <br>
+4\) 결제수단별 재구매율 계산 (2023년)<br>
+5\) 코호트 분석<br>
+6\) 고객 세그먼트(RFM Score, K Means Algorithm) <br>
+7\) 일자별 첫 구매자 수<br>
+8\) 상품별 첫 구매 고객 수<br>
+9\) 첫 구매 후 이탈하는 고객의 비중
+10\) 판매 수량이 20% 이상 증가한 상품 리스트 (YTD)
+11\) 주차별 매출액
+12\) 신규/기존 고객의 2024년 월별 매출액 
+13\) 기존 고객의 2024년 월 누적 리텐션-[태블로](https://public.tableau.com/app/profile/mzkim/viz/2024_17288177678440/1)
+14\) LTV(Life Time Value)
+
 ## **1. 지표 분석**
 #### **# 슈퍼스토어 매출 및 현황 파악 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** (←클릭하시면 링크로 연결됩니다.)
 - **데이터**: Superstore Sales (from Tableau)
