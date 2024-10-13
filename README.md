@@ -7,7 +7,7 @@
 
 ## **1. 지표 추출**
 #### #. 전자 제품 데이터를 이용한 리포트 작성** ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%84%EC%9E%90%20%EC%A0%9C%ED%92%88%20%ED%8C%90%EB%A7%A4%20%EB%8D%B0%EC%9D%B4%ED%84%B0))** (←클릭하시면 링크로 연결됩니다.)
-- **데이터**: Customer purchase behavior - Electronic Sales Data (from Tableau)
+- **데이터**: Customer purchase behavior - Electronic Sales Data (from Kaggle)
 - **추출지표**:<br>
 1\) 상품별 구매자 수 및 매출액<br>
 2\) 가장 많이 판매된 2개 카테고리 조회 (판매 상품 수 기준)<br>
