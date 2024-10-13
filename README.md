@@ -14,7 +14,7 @@
 3\) 2)번 구매자가 구매한 다른 카테고리 <br>
 4\) 결제수단별 재구매율 계산 (2023년)<br>
 5\) 코호트 분석<br>
-6\) 고객 세그먼트(RFM Score, K Means Algorithm) <br>
+6\) 고객 세그먼트 (RFM Score, K Means Algorithm) <br>
 7\) 일자별 첫 구매자 수<br>
 8\) 상품별 첫 구매 고객 수<br>
 9\) 첫 구매 후 이탈하는 고객의 비중<br>
