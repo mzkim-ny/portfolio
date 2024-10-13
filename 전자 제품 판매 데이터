@@ -1,0 +1,408 @@
+
+Select *
+From [dbo].[Electronic_sales_Sep2023-Sep2024]
+
+
+--- 0) 고객 아이디 중복값 확인
+
+SELECT customer_id, COUNT(*) AS count
+FROM [dbo].[Electronic_sales_Sep2023-Sep2024]
+GROUP BY customer_id
+HAVING COUNT(*) > 1;
+
+
+--- 1) 상품별 구매자 수 및 매출액
+
+SELECT	Product_Type, 
+		COUNT(DISTINCT Customer_ID) CI, 
+		SUM(Total_Price) Sales
+FROM [dbo].[Electronic_sales_Sep2023-Sep2024]
+WHERE Order_Status IN ('Completed')
+GROUP BY Product_Type
+ORDER BY 3 DESC;
+
+--- 2) 가장 많이 판매된 2개 카테고리 조회 (판매 상품 수 기준)
+
+SELECT Product_Type
+FROM
+(SELECT *,
+ROW_NUMBER() OVER(ORDER BY Sales DESC) RNK
+FROM
+(SELECT	Product_Type, 
+		SUM(Quantity) Sales
+FROM		[dbo].[Electronic_sales_Sep2023-Sep2024]
+WHERE Order_Status IN ('Completed')
+GROUP BY Product_Type) A ) A
+WHERE RNK BETWEEN 1 AND 2;
+
+---3) 2)번 구매자가 구매한 다른 카테고리
+
+SELECT Customer_ID
+INTO Customer_ID_2
+FROM [dbo].[Electronic_sales_Sep2023-Sep2024]
+WHERE Order_Status IN ('Completed')
+GROUP BY Customer_ID
+HAVING MAX(CASE WHEN Product_Type = 'Smartphone' THEN 1 ELSE 0 END) = 1
+AND MAX(CASE WHEN Product_Type = 'Tablet' THEN 1 ELSE 0 END) = 1
+
+SELECT Product_Type, SUM(Total_Price) AS TP, COUNT(DISTINCT Customer_ID) AS CI
+FROM [dbo].[Electronic_sales_Sep2023-Sep2024]
+WHERE Customer_ID IN (SELECT Customer_ID FROM Customer_ID_2) AND
+Order_Status IN ('Completed')
+AND Product_Type NOT IN ('Smartphone', 'Tablet')
+GROUP BY Product_Type
+ORDER BY 2 DESC;
+
+---4) 결제수단별 재구매율 계산 (2023년)
+
+SELECT A.Payment_Method,
+       YEAR(A.Purchase_Date) AS YY,
+       COUNT(DISTINCT B.Customer_ID) * 1.0 / NULLIF(COUNT(DISTINCT A.Customer_ID), 0) AS Retention_rate
+FROM (SELECT DISTINCT Payment_Method,
+                     Purchase_Date,
+                     Customer_ID
+      FROM [Electronic_sales_Sep2023-Sep2024]
+      WHERE Order_Status = 'Completed') A
+LEFT JOIN (SELECT DISTINCT Payment_Method,
+                           Purchase_Date,
+                           Customer_ID
+           FROM [Electronic_sales_Sep2023-Sep2024]
+           WHERE Order_Status = 'Completed') B
+ON YEAR(A.Purchase_Date) = YEAR(B.Purchase_Date) - 1
+   AND A.Payment_Method = B.Payment_Method
+   AND A.Customer_ID = B.Customer_ID
+GROUP BY A.Payment_Method,
+         YEAR(A.Purchase_Date)
+HAVING YEAR(A.Purchase_Date) = 2023
+ORDER BY 1, 2;
+
+--- 5) 코호트 분석
+
+SELECT *
+FROM
+(SELECT Customer_ID,
+MIN(Purchase_Date) MNDT
+FROM [Electronic_sales_Sep2023-Sep2024]
+GROUP BY Customer_ID) A
+LEFT
+JOIN
+(SELECT Customer_ID,
+Purchase_Date,
+Total_Price AS Sales
+FROM [Electronic_sales_Sep2023-Sep2024]) B
+ON A.Customer_ID=B.Customer_ID
+
+
+SELECT YEAR(B.Purchase_Date) AS YY,
+       DATEDIFF(MONTH, A.MNDT, B.Purchase_Date) AS DATEDIFF,
+       COUNT(DISTINCT A.Customer_ID) AS BU,
+       SUM(B.Total_Price) AS Sales
+FROM (
+    SELECT Customer_ID,
+           MIN(Purchase_Date) AS MNDT
+    FROM [Electronic_sales_Sep2023-Sep2024]
+	WHERE Order_Status = 'Completed'
+    GROUP BY Customer_ID
+) A
+LEFT JOIN (
+    SELECT Customer_ID,
+           Purchase_Date,
+           Total_Price
+    FROM [Electronic_sales_Sep2023-Sep2024]
+	WHERE Order_Status = 'Completed'
+) B ON A.Customer_ID = B.Customer_ID
+GROUP BY YEAR(B.Purchase_Date), DATEDIFF(MONTH, A.MNDT, B.Purchase_Date)
+ORDER BY YY, DATEDIFF;
+
+--- * 테이블 업데이트*
+
+SELECT *
+INTO TABLE_NEW
+FROM [Electronic_sales_Sep2023-Sep2024]
+WHERE Order_Status = 'Completed'; 
+
+
+----- 6) 고객 세그먼트
+
+UPDATE [dbo].[TABLE_NEW]
+SET total_price = CAST(total_price AS INT);
+
+--- a) RFM Score
+
+SELECT Customer_ID,
+MAX(Purchase_Date) mxdt
+FROM [dbo].[TABLE_NEW]
+GROUP BY Customer_ID
+
+SELECT MAX(Purchase_Date) mxdt
+FROM [dbo].[TABLE_NEW]
+
+--- *2024-09-23*
+
+SELECT Customer_ID,
+       DATEDIFF(DAY, mxdt, '2024-09-23') AS recency
+FROM 
+    (SELECT Customer_ID,
+            MAX(Purchase_Date) AS mxdt
+     FROM TABLE_NEW
+	 WHERE Order_Status = 'Completed'
+     GROUP BY Customer_ID) a
+
+SELECT Customer_ID,
+COUNT(Customer_ID) frequency,
+SUM(Total_price) monetary
+FROM TABLE_NEW
+WHERE Order_Status = 'Completed'
+GROUP BY Customer_ID;
+
+
+
+SELECT Customer_ID,
+       DATEDIFF(DAY, mxdt, '2024-09-23') AS recency,
+	   frequency,
+	   monetary
+FROM 
+    (SELECT Customer_ID,
+            MAX(Purchase_Date) AS mxdt,
+			COUNT(Customer_ID) frequency,
+			SUM(Total_price) monetary
+     FROM TABLE_NEW
+	 WHERE Order_Status = 'Completed'
+     GROUP BY Customer_ID) a
+
+
+--- b) K Means Algorithm (재구매 Segment)
+
+
+SELECT CUSTOMER_ID,
+CASE WHEN MAX_UU >=2 then 1 else 0 end repurchase_segment
+FROM
+(SELECT CUSTOMER_ID,
+MAX(UU) AS MAX_UU
+FROM 
+(SELECT CUSTOMER_ID,
+SKU,
+COUNT(DISTINCT YEAR(Purchase_Date)) AS UU
+FROM TABLE_NEW
+GROUP BY CUSTOMER_ID,SKU) a
+GROUP BY CUSTOMER_ID) b
+GROUP BY CUSTOMER_ID, MAX_UU;
+
+--- 7) 일자별 첫 구매자 수
+
+SELECT Customer_ID,
+MIN(Purchase_Date) mxdt
+FROM TABLE_NEW
+GROUP BY Customer_ID;
+
+
+SELECT mndt,
+COUNT(DISTINCT Customer_ID) AS BU
+FROM(SELECT Customer_ID,
+MIN(Purchase_Date) AS mndt
+FROM TABLE_NEW
+GROUP BY Customer_ID) A
+GROUP BY mndt;
+
+--- 8) 상품별 첫 구매 고객 수
+
+SELECT CUSTOMER_ID,
+SKU,
+MNDT,
+ROW_NUMBER() OVER(PARTITION BY CUSTOMER_ID ORDER BY MNDT) RNK
+FROM
+(SELECT CUSTOMER_ID,
+SKU,
+MIN(Purchase_Date) MNDT
+FROM TABLE_NEW
+GROUP BY CUSTOMER_ID, SKU) A;
+
+--a) 고객별 첫 구매 내역 조회
+
+SELECT *
+FROM
+(SELECT CUSTOMER_ID,
+SKU,
+MNDT,
+ROW_NUMBER() OVER(PARTITION BY CUSTOMER_ID ORDER BY MNDT) RNK
+FROM
+(SELECT CUSTOMER_ID,
+SKU,
+MIN(Purchase_Date) MNDT
+FROM TABLE_NEW
+GROUP BY CUSTOMER_ID, SKU) A) B
+WHERE RNK = 1;
+
+
+--b) 상품별 첫 구매 고객 수 집계
+
+SELECT SKU,
+COUNT(DISTINCT Customer_ID) First_bu
+FROM
+(SELECT *
+FROM
+(SELECT CUSTOMER_ID,
+SKU,
+MNDT,
+ROW_NUMBER() OVER(PARTITION BY CUSTOMER_ID ORDER BY MNDT) RNK
+FROM
+(SELECT CUSTOMER_ID,
+SKU,
+MIN(Purchase_Date) MNDT
+FROM TABLE_NEW
+GROUP BY CUSTOMER_ID, SKU) A) B
+WHERE RNK = 1) C
+GROUP BY SKU
+ORDER BY 2 DESC;
+
+--- 9) 첫 구매 후 이탈하는 고객의 비중
+
+SELECT 
+    CASE 
+        WHEN COUNT(DISTINCT CUSTOMER_ID) = 0 THEN 0
+        ELSE SUM(CASE WHEN F_DATE = 1 THEN 1 ELSE 0 END) * 1.0 / COUNT(DISTINCT CUSTOMER_ID) 
+    END AS BOUNC_RATE
+FROM
+    (SELECT 
+         CUSTOMER_ID,
+         COUNT(DISTINCT Purchase_Date) AS F_DATE
+     FROM 
+         TABLE_NEW
+     GROUP BY 
+         CUSTOMER_ID) A;
+
+
+--- 10) 판매 수량이 20% 이상 증가한 상품 리스트 (YTD)
+
+SELECT *
+FROM
+(SELECT 
+    A.SKU,
+    A.QTY AS QTY_2024,
+    B.QTY AS QTY_2023,
+    CASE 
+        WHEN B.QTY IS NULL OR B.QTY = 0 THEN NULL
+        ELSE (A.QTY * 1.0 / B.QTY) - 1.00
+    END AS QTY_INCREASE_RATE
+FROM
+    (SELECT SKU,
+            SUM(Quantity) AS QTY
+     FROM [dbo].[TABLE_NEW]
+     WHERE YEAR(Purchase_Date) = 2024
+     GROUP BY SKU) A
+LEFT JOIN
+    (SELECT SKU,
+            SUM(Quantity) AS QTY
+     FROM [dbo].[TABLE_NEW]
+     WHERE YEAR(Purchase_Date) = 2023
+     GROUP BY SKU) B
+ON A.SKU = B.SKU) BASE
+WHERE QTY_INCREASE_RATE >= 1.2
+;
+
+
+--- 11) 주차별 매출액
+
+SELECT 
+    DATEPART(WEEK, Purchase_Date) AS WK,
+    SUM(Total_Price) AS Sales
+FROM 
+    [dbo].[TABLE_NEW]
+WHERE 
+    YEAR(Purchase_Date) = 2023
+GROUP BY 
+    DATEPART(WEEK, Purchase_Date)
+ORDER BY 
+    WK;
+
+--- 12) 신규/기존 고객의 2024년 월별 매출액
+
+SELECT 
+B.NEW_EXI,
+FORMAT(A.Purchase_Date, 'yyyy-MM') AS YearMonth,
+SUM(A.Total_Price) AS Sales
+FROM [dbo].[TABLE_NEW] AS A
+LEFT
+JOIN
+(SELECT 
+  CASE WHEN YEAR(MNDT) = 2024 THEN 'NEW' ELSE 'EXI' 
+  END AS NEW_EXI,
+  Customer_ID
+FROM 
+  (SELECT 
+     Customer_ID,
+     MIN(Purchase_Date) AS MNDT
+   FROM [dbo].[TABLE_NEW]
+   GROUP BY Customer_ID) AA) B
+ON A.Customer_ID=B.Customer_ID
+WHERE YEAR(A.Purchase_Date)=2024
+GROUP BY 
+B.NEW_EXI, 
+FORMAT(A.Purchase_Date, 'yyyy-MM');
+
+--- 13) 기존 고객의 2024년 월 누적 리텐션
+
+SELECT MM,
+COUNT(DISTINCT Customer_ID) AS N_CUSTOMERS
+FROM
+(SELECT Customer_ID,
+FORMAT(Purchase_Date, 'yyyy-MM') AS MM
+FROM
+(SELECT *
+FROM [dbo].[TABLE_NEW]
+WHERE Customer_ID IN
+(SELECT Customer_ID
+FROM [dbo].[TABLE_NEW]
+GROUP BY Customer_ID
+HAVING MIN(YEAR(Purchase_Date))=2023)
+AND YEAR(Purchase_Date)=2024) A
+GROUP BY Customer_ID, FORMAT(Purchase_Date, 'yyyy-MM')) AA
+GROUP BY MM
+ORDER BY MM;
+
+SELECT COUNT(*) AS N_CUSTOMERS
+FROM (
+    SELECT Customer_ID
+    FROM [dbo].[TABLE_NEW]
+    GROUP BY Customer_ID
+    HAVING MIN(YEAR(Purchase_Date)) = 2023
+) A; -- 1626
+
+
+--- 14) LTV(Life Time Value)
+
+---a) Retention_rate
+
+SELECT 
+    COUNT(B.Customer_ID) * 1.0 / COUNT(A.Customer_ID) AS Retention_rate
+FROM
+    (SELECT DISTINCT Customer_ID
+     FROM [dbo].[TABLE_NEW]
+     WHERE YEAR(Purchase_Date) = 2023) A
+LEFT JOIN
+    (SELECT DISTINCT Customer_ID
+     FROM [dbo].[TABLE_NEW]
+     WHERE YEAR(Purchase_Date) = 2024) B
+ON A.Customer_ID = B.Customer_ID;
+
+---b) AMV
+
+SELECT SUM(Total_price)*1.0/COUNT(DISTINCT Customer_ID) AS AMW
+FROM [dbo].[TABLE_NEW]
+WHERE YEAR(Purchase_Date)=2024;
+
+---c) 2023년 구매자 수
+
+SELECT COUNT(DISTINCT Customer_ID) N_NU
+FROM [dbo].[TABLE_NEW]
+WHERE YEAR(Purchase_Date)=2024;
+
+---d) 2023년 매출액
+
+SELECT SUM(Total_Price) AS Sales_2024
+FROM [dbo].[TABLE_NEW]
+WHERE YEAR(Purchase_Date)=2024;
+
+---e) 2023년 구매자의 LTV
+
+--- 38,085,101+0.40*8,495*4,483 =53,304,635
