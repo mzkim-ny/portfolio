@@ -5,7 +5,8 @@
 - **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈>, <SQL로 맛보는 데이터 전처리 분석>
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
-## **0. 전자 제품 데이터를 이용한 리포트 작성** ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%84%EC%9E%90%20%EC%A0%9C%ED%92%88%20%ED%8C%90%EB%A7%A4%20%EB%8D%B0%EC%9D%B4%ED%84%B0))** (←클릭하시면 링크로 연결됩니다.)
+## **1. 지표 추출**
+#### 0. 전자 제품 데이터를 이용한 리포트 작성** ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%84%EC%9E%90%20%EC%A0%9C%ED%92%88%20%ED%8C%90%EB%A7%A4%20%EB%8D%B0%EC%9D%B4%ED%84%B0))** (←클릭하시면 링크로 연결됩니다.)
 - **데이터**: Customer purchase behavior - Electronic Sales Data (from Tableau)
 - **추출지표**:<br>
 1\) 상품별 구매자 수 및 매출액<br>
@@ -23,7 +24,7 @@
 13\) 기존 고객의 2024년 월 누적 리텐션-[태블로](https://public.tableau.com/app/profile/mzkim/viz/2024_17288177678440/1)<br>
 14\) LTV(Life Time Value)<br>
 
-## **1. 지표 분석**
+## **2. 지표 분석**
 #### **# 슈퍼스토어 매출 및 현황 파악 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** (←클릭하시면 링크로 연결됩니다.)
 - **데이터**: Superstore Sales (from Tableau)
 - **추출지표**:<br>
@@ -46,7 +47,7 @@
 - **제언**: ID당 주문이 단 한 건이어도, S사이즈를 먼저 선택하지 않는 것으로 보입니다. 주문비율과 매출비율 모두 L사이즈가 가장 높고, 다음으로는 M사이즈, S사이즈입니다. 사이즈별로 선호하는 메뉴가 다른 만큼, S사이즈를 가장 많이 주문하는 목요일 12시에, 인기 메뉴에 한정하여 할인 쿠폰을 발행하는 이벤트를 제안합니다.
 - **코드**: 태블로에서 작업을 시작하기 전, SQL로 지표를 도출해보면서, 사이즈별로 선호하는 메뉴가 다른 점, 시간대가 달라도 같은 사이즈면 선호하는 메뉴가 그리 다르지 않다는 점을 발견하고, 이에 맞춰 대시보드를 구성하였습니다.
 
-## **2. 대시보드**
+## **3. 대시보드**
 #### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4))  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)** 
 - **데이터**: 영화관 입장권 통합전산망(2024.06)
 - **목적**: 코로나19 이후 영화산업이 얼마나 회복되었는지 확인하기 위함입니다.
@@ -64,7 +65,7 @@
 - **제언**: 가장 많이 대출하는 문학과 사회과학을 자료실 입구에 나란히 배치한 것은, 총 대출 건수를 늘리는 선택이었다고 생각합니다. 이벤트 서가 코너에 새로운 책을 비치할 때, 보유 권수는 많지만 대출 건수가 저조한 카테고리의 책을 고려해볼 수 있겠습니다.
 
 
-## **3. 데이터 시각화**
+## **4. 데이터 시각화**
 #### **# 남양주에는 반려견이 얼마나 살까? (Excel)   - [태블로 1](https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1)&nbsp;- [태블로 2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
 - **데이터**: 남양주시 반려동물 등록현황(개)(2024.02), 남양주시 인구통계(2024.05)
 - **목적**: 남양주 시민의 반려동물(개) 양육 현황을 파악하기 위함입니다.
