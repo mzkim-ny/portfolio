@@ -22,7 +22,7 @@
 11\) 주차별 매출액<br>
 12\) 신규/기존 고객의 2024년 월별 매출액 <br>
 13\) 기존 고객의 2024년 월 누적 리텐션 -[태블로](https://public.tableau.com/app/profile/mzkim/viz/2024_17288177678440/1)<br>
-14\) LTV(Life Time Value)<br>
+14\) 2023년 구매자의 LTV (Life Time Value)<br>
 
 ## **2. 지표 분석**
 #### **# 슈퍼스토어 매출 및 현황 파악 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** (←클릭하시면 링크로 연결됩니다.)
