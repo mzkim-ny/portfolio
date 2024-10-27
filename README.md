@@ -6,7 +6,7 @@
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
 ## **1. 지표 추출**
-#### #. 전자 제품 데이터를 이용한 리포트 작성** ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%84%EC%9E%90%20%EC%A0%9C%ED%92%88%20%ED%8C%90%EB%A7%A4%20%EB%8D%B0%EC%9D%B4%ED%84%B0))** (←클릭하시면 링크로 연결됩니다.)
+#### #. 전자 제품 데이터를 이용한 리포트 작성 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%84%EC%9E%90%20%EC%A0%9C%ED%92%88%20%ED%8C%90%EB%A7%A4%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) (←클릭하시면 링크로 연결됩니다.)
 - **데이터**: Customer purchase behavior - Electronic Sales Data (from Kaggle)
 - **추출지표**:<br>
 1\) 상품별 구매자 수 및 매출액<br>
@@ -25,7 +25,7 @@
 14\) 2023년 구매자의 LTV (Life Time Value)<br>
 
 ## **2. 지표 분석**
-#### **# 슈퍼스토어 매출 및 현황 파악 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** (←클릭하시면 링크로 연결됩니다.)
+#### **# 슈퍼스토어 매출 및 현황 파악 ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%EC%8A%88%ED%8D%BC%EC%8A%A4%ED%86%A0%EC%96%B4))** 
 - **데이터**: Superstore Sales (from Tableau)
 - **추출지표**:<br>
 1\) 매출액(일자별, 월별, 연도별)<br>
@@ -40,7 +40,7 @@
 - **시각화**: 고객이 재구매를 하기까지 기간이 얼마나 소요되었는지, 하이라이트 테이블로 표현하였습니다. ([코호트분석](https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)) 
 - **제언**: 고객이 점점 넓은 간격으로 보다 저렴한 상품을 반복 구매한다고 보여집니다. 이벤트를 진행한다면, 매출이 높은 서부지역에서 상대적으로 가격이 저렴한 인기 품목을 선정하는 것을 제안합니다.
 
-#### **# 피자 할인 쿠폰을 어떤 방식으로 발행할 수 있을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [태블로](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link)** (←클릭하시면 링크로 연결됩니다.)
+#### **# 피자 할인 쿠폰을 어떤 방식으로 발행할 수 있을까? ([SQL](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0)) - [태블로](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link)** 
 - **데이터**: Pizza Sales (from Kaggle)
 - **목적**: 1인 피자 시장이 커짐에 따라, S사이즈 피자 판매 현황을 파악하고, 할인 쿠폰 발행 시 참고하기 위함입니다.
 - **대시보드**: 지표(총 주문금액 등)를 산출하고, 사이즈별 특징을 진행 그래프로 표현하였으며, 사이즈/시간/요일별 주문 건수는 하이라이트 테이블로, 가장 많이 구매한 메뉴 5가지는 트리맵 차트로 시각화하였습니다.
