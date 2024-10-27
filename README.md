@@ -21,7 +21,7 @@
 10\) 판매 수량이 20% 이상 증가한 상품 리스트 (YTD)<br>
 11\) 주차별 매출액<br>
 12\) 신규/기존 고객의 2024년 월별 매출액 <br>
-13\) 기존 고객의 2024년 월 누적 리텐션 -[태블로](https://public.tableau.com/app/profile/mzkim/viz/2024_17288177678440/1)<br>
+13\) 기존 고객의 2024년 월 누적 리텐션 - [태블로](https://public.tableau.com/app/profile/mzkim/viz/2024_17288177678440/1)<br>
 14\) 2023년 구매자의 LTV (Life Time Value)<br>
 
 ## **2. 지표 분석**
