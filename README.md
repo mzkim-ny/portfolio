@@ -30,7 +30,7 @@
 6\) 매출 TOP 5 도시(West)<br>
 7\) 매출 TOP 10 품목(West, Los Angeles, 2017)<br>
 8\) 재구매율(지역별, 연도별)<br>
-- **시각화**: 고객이 재구매를 하기까지 기간이 얼마나 소요되었는지, 하이라이트 테이블로 표현하였습니다. **([태블로보기](https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))**
+- **시각화**: 고객이 재구매를 하기까지 기간이 얼마나 소요되었는지, 하이라이트 테이블로 표현하였습니다. **([코호트분석](https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))**
 - **해석**: 매출액, 구매자 수, 구매 건수, 인당 매출액은 연도별로 증가하였으나, 건당 구매 금액은 하락하였습니다. 가장 매출액이 높은 서부에서는, 재구매율은 지역별로 차이를 보이지 않지만, 연도별로는 상승한다는 점을 확인하였습니다.
 - **제언**: 고객이 점점 넓은 간격으로 보다 저렴한 상품을 반복 구매한다고 보여집니다. 이벤트를 진행한다면, 인기 순위 중에 상대적으로 가격이 저렴한 상품을 선정하는 것을 제안합니다.
 <br><br>
