@@ -35,7 +35,7 @@
 - **제언**: 고객이 점점 넓은 간격으로 보다 저렴한 상품을 반복 구매한다고 보여집니다. 이벤트를 진행한다면, 인기 차트 중에 상대적으로 가격이 저렴한 상품을 선정하는 것을 제안합니다.
 <br><br>
 ## **2. 대시보드로 현황 파악**
-#### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC기 2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
+#### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC)[태블로보기](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
 - **데이터**: 남양주시 반려동물 등록현황(개)(2024.02), 남양주시 인구통계(2024.05)
 - **목적**: 남양주 시민의 반려동물(개) 양육 현황을 파악하기 위함입니다.
 - **해석**: 남양주시 내에서 반려견 등록이 가장 많은 읍면동은 화도읍(10,306마리), 다산1동(6,390마리), 별내동(5,893마리) 순으로 나타나며, 이는 주민등록 인구가 가장 많은 세 읍면동과 유사합니다.
