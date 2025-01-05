@@ -35,7 +35,7 @@
 - **제언**: 고객이 점점 넓은 간격으로 보다 저렴한 상품을 반복 구매한다고 보여집니다. 이벤트를 진행한다면, 인기 차트 중에 상대적으로 가격이 저렴한 상품을 선정하는 것을 제안합니다.
 <br><br>
 ## **2. 대시보드로 현황 파악**
-#### **# 정약용도서관에서는 어떤 책이 많이 대출되었을까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%95%EC%95%BD%EC%9A%A9%EB%8F%84%EC%84%9C%EA%B4%80%EC%97%90%EC%84%9C%EB%8A%94%20%EC%96%B4%EB%96%A4%20%EC%B1%85%EC%9D%B4%20%EB%A7%8E%EC%9D%B4%20%EB%8C%80%EC%B6%9C%EB%90%98%EC%97%88%EC%9D%84%EA%B9%8C%3F))  [태블로](https://public.tableau.com/views/_17196652852140/1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)**
+#### **# 정약용도서관에서는 어떤 책이 많이 대출되었을까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%EC%A0%95%EC%95%BD%EC%9A%A9%EB%8F%84%EC%84%9C%EA%B4%80%EC%97%90%EC%84%9C%EB%8A%94%20%EC%96%B4%EB%96%A4%20%EC%B1%85%EC%9D%B4%20%EB%A7%8E%EC%9D%B4%20%EB%8C%80%EC%B6%9C%EB%90%98%EC%97%88%EC%9D%84%EA%B9%8C%3F)) ([태블로](https://public.tableau.com/views/_17196652852140/1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link))**
 - **데이터**: 남양주시 정약용도서관 장서 대출목록(2024.05)
 - **목적**: 정약용도서관 이용자의 독서 취향을 파악하기 위함입니다.
 - **시각화**: 도서 대출 비율에 따라 십진분류 카테고리를 원그래프로 시각화하였습니다. 각 원을 클릭하면, 대출목록 TOP 10, 대출 횟수, 총 대출 건수, 총 보유 권수가 표시됩니다.
