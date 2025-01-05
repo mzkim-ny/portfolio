@@ -3,7 +3,7 @@
 
 - **활용툴**: Microsoft SQL Server, Tableau Public, Excel, ChatGPT
 - **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈>, <SQL로 맛보는 데이터 전처리 분석>
-- **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
+- **태블로**:  [프로필보기](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 <br><br>
 ## **1. 데이터 분석**
 #### **# 피자 할인 쿠폰을 어떻게 발행하면 좋을까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0))** 
@@ -14,7 +14,7 @@
 2\) 사이즈별 매출비율(ID당 주문이 한 건일때/아닐 때)<br>
 3\) 사이즈/시간/요일별 주문 건수<br>
 4\) 사이즈/시간/요일별 가장 많이 구매한 메뉴 5가지<br>
-- **시각화**: 지표를 산출하고, '사이즈별 매출비율'을 진행 그래프로 표현하였으며, '사이즈/시간/요일별 주문 건수'는 하이라이트 테이블로, '가장 많이 구매한 메뉴 5가지'는 트리맵 차트로 시각화하였습니다. ([태블로](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link))
+- **시각화**: 지표를 산출하고, '사이즈별 매출비율'을 진행 그래프로 표현하였으며, '사이즈/시간/요일별 주문 건수'는 하이라이트 테이블로, '가장 많이 구매한 메뉴 5가지'는 트리맵 차트로 시각화하였습니다. ([태블로보기](https://public.tableau.com/shared/4FKB8ZMXH?:display_count=n&:origin=viz_share_link))
 - **해석**: ID당 주문이 한 건이어도, S사이즈를 먼저 선택하지 않는 것으로 보입니다. 주문비율과 매출비율 모두 L사이즈가 가장 높고, 다음으로는 M사이즈, S사이즈입니다. 사이즈별로 선호하는 메뉴가 다르며, 주문 시간이 달라져도 사이즈별 선호하는 메뉴는 그리 변하지 않는 점을 발견하였습니다.
 - **제언**: 1인 피자 시장에서 S사이즈 피자 수요가 늘어나고 있다면, S사이즈를 가장 많이 주문하는 목요일 12시에, 인기 메뉴에 한정하여 할인 쿠폰을 발행하는 이벤트를 제안합니다.
 <br><br>
@@ -30,12 +30,12 @@
 6\) 매출 TOP 5 도시(West)<br>
 7\) 매출 TOP 10 품목(West, Los Angeles, 2017)<br>
 8\) 재구매율(지역별, 연도별)<br>
-- **시각화**: 고객이 재구매를 하기까지 기간이 얼마나 소요되었는지, 하이라이트 테이블로 표현하였습니다. ([코호트분석](https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)) 
+- **시각화**: 고객이 재구매를 하기까지 기간이 얼마나 소요되었는지, 하이라이트 테이블로 표현하였습니다. ([태블로보기](https://public.tableau.com/views/240922_/2?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)) 
 - **해석**: 매출액, 구매자 수, 구매 건수, 인당 매출액은 연도별로 증가하였으나, 건당 구매 금액은 하락하였습니다. 가장 매출액이 높은 서부 지역에서, 도시별/품목별 판매 순위를 추가로 추출해 보았더니, 재구매율은 지역별로는 차이를 보이지 않지만, 연도별로는 상승한다는 점을 확인하였습니다.
 - **제언**: 고객이 점점 넓은 간격으로 보다 저렴한 상품을 반복 구매한다고 보여집니다. 이벤트를 진행한다면, 인기 차트 중에 상대적으로 가격이 저렴한 상품을 선정하는 것을 제안합니다.
 <br><br>
 ## **2. 대시보드로 현황 파악**
-#### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4))  - [태블로](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)** 
+#### **# 코로나19 이후 영화관을 찾는 관객은 얼마나 될까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%EC%BD%94%EB%A1%9C%EB%82%9819%EC%9D%B4%ED%9B%84%20%EC%98%81%ED%99%94%EA%B4%80%20%EB%A7%A4%EC%B6%9C%EC%95%A1%20%EB%B0%8F%20%EA%B4%80%EA%B0%9D%EC%88%98%20%EC%B6%94%EC%9D%B4))  - [태블로보기](https://public.tableau.com/views/19_17186243860350/2_1?:language=ko-KR&:sid=&:display_count=n&:origin=viz_share_link)** 
 - **데이터**: 영화관 입장권 통합전산망(2024.06)
 - **목적**: 코로나19 이후 영화산업이 얼마나 회복되었는지 확인하기 위함입니다.
 - **시각화**: 국가별 추이(전체영화, 한국영화, 외국영화)가 어떠한 변화를 보이는지, 년도, 매출액, 관객 수, 영화 수를 조건으로 두고, 누적 그래프와 숫자로 표현하였습니다.
