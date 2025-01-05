@@ -6,6 +6,7 @@
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
 
 
+
 ## **1. 데이터 분석**
 #### **# 피자 할인 쿠폰을 어떤 방식으로 발행할 수 있을까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0))** 
 - **목적**: 1인 피자 시장이 커짐에 따라, 할인 쿠폰 발행 시 참고하기 위함입니다.
