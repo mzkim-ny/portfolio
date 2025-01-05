@@ -4,7 +4,6 @@
 - **활용툴**: Microsoft SQL Server, Tableau Public, Excel, ChatGPT
 - **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈>, <SQL로 맛보는 데이터 전처리 분석>
 - **태블로**:  [프로필](https://public.tableau.com/app/profile/mzkim/vizzes)<br><br/>
-
 <br><br>
 ## **1. 데이터 분석**
 #### **# 피자 할인 쿠폰을 어떤 방식으로 발행할 수 있을까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%ED%94%BC%EC%9E%90%20%EB%8D%B0%EC%9D%B4%ED%84%B0))** 
