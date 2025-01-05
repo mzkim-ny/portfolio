@@ -42,7 +42,7 @@
 - **해석**: 가장 많이 대출하는 문학과 사회과학을, 자료실 입구에 배치한 점이 적절해 보입니다. 접근성이 좋기 때문입니다.
 - **제언**: 이벤트 서가 코너에 새로운 책을 비치할 때, 보유 권수는 많지만 대출 건수가 저조한 카테고리의 책을 고려해볼 수 있겠습니다.
 
-#### **# 남양주에는 반려견이 얼마나 살까? (Excel)   - [태블로보기 1](https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1)&nbsp;- [태블로보기 2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link)**
+#### **# 남양주에는 반려견이 얼마나 살까? (Excel)   ([태블로보기 1](https://public.tableau.com/app/profile/mzkim/viz/3_17178536456650/1)) ([태블로보기 2](https://public.tableau.com/shared/35Z4SXZ2H?:display_count=n&:origin=viz_share_link))**
 - **데이터**: 남양주시 반려동물 등록현황(개)(2024.02), 남양주시 인구통계(2024.05)
 - **목적**: 남양주 시민의 반려동물(개) 양육 현황을 파악하기 위함입니다.
 - **해석**: 남양주시 내에서 반려견 등록이 가장 많은 읍면동은 화도읍(10,306마리), 다산1동(6,390마리), 별내동(5,893마리) 순으로 나타나며, 이는 주민등록 인구가 가장 많은 세 읍면동과 유사합니다.
@@ -55,7 +55,7 @@
 - **제언**: 구리시는 반려동물 놀이터를 설치하여 만족도를 실험해보고 있습니다. 남양주시도 시범 운영을 해본다면, 면적 수 대비 반려견 등록 수가 가장 많은, 다산 1동에서 먼저 시작해보는 걸 추천합니다. 반려동물 놀이터 하나당 이용률을 높일 수 있고 여러 의견을 청취해볼 수 있습니다.
 
 <br><br>
-#### **# 지금 탕후루매장 인기는 어떠할까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%ED%83%95%ED%9B%84%EB%A3%A8%EB%A7%A4%EC%9E%A5%20%EA%B0%9C%EC%97%85%20%EB%B0%8F%20%ED%8F%90%EC%97%85%20%EC%88%98))  - [태블로보기](https://public.tableau.com/views/2024_06_1/1_1?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
+#### **# 지금 탕후루매장 인기는 어떠할까? ([코드보기](https://github.com/mzkim-ny/portfolio/blob/main/%ED%83%95%ED%9B%84%EB%A3%A8%EB%A7%A4%EC%9E%A5%20%EA%B0%9C%EC%97%85%20%EB%B0%8F%20%ED%8F%90%EC%97%85%20%EC%88%98))  ([태블로보기](https://public.tableau.com/views/2024_06_1/1_1?:language=ko-KR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))**
 - **데이터**: 지방행정 인허가 데이터개방(2024.06)
 - **목적**: 탕후루 매장이 폐업하고 있다는 뉴스가 보도되었습니다. 얼마나 가파르게 진행되고 있는지 확인하기 위함입니다.
 - **해석**: 2024년 1월부터 6월까지 폐업한 탕후루 매장은 총 163곳으로, 지난해 폐업한 매장(72곳)보다 많습니다. 탕후루 개업 매장 수는 2023년 3분기에 정점을 찍고, 점점 감소하고 있으며, 최근 감소 추세가 가팔라지고 있습니다.
