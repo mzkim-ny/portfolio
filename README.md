@@ -1,7 +1,7 @@
 # **김민지 포트폴리오**
 안녕하세요. 궁금했던 사안에 관해 질문하고, 데이터를 통해 답한 기록입니다.
 
-- **활용툴**: Microsoft SQL Server, Tableau Public, Excel, ChatGPT
+- **활용툴**: Microsoft SQL Server, Tableau Public, Excel
 - **참고도서**: <나의 첫 SQL 수업>, <태블로 굿모닝 굿애프터눈>, <SQL로 맛보는 데이터 전처리 분석>
 - **태블로**:  **[프로필보기](https://public.tableau.com/app/profile/mzkim/vizzes)**<br><br/>
 
